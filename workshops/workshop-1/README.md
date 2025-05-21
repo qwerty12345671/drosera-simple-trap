@@ -2,7 +2,7 @@
 
 In this workshop we will:
 
-- Run basic commands deploy a trap.
+- Run basic commands to deploy a trap.
 
 ## Commands
 
