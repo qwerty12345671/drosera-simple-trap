@@ -9,20 +9,21 @@ interface IMockResponse {
 
 contract Trap is ITrap {
     address public constant RESPONSE_CONTRACT = 0x4608Afa7f277C8E0BE232232265850d1cDeB600E;
-    string constant discordName = "your discord name";
+    string constant discordName = ""; // add your discord name here
 
     function collect() external view returns (bytes memory) {
         bool active = IMockResponse(RESPONSE_CONTRACT).isActive();
-        return abi.encode(active);
+        return abi.encode(active, discordName);
     }
 
     function shouldRespond(bytes[] calldata data) external pure returns (bool, bytes memory) {
         // take the latest block data from collect
-        bool active = abi.decode(data[0], (bool));
-        if (!active) {
+        (bool active, string memory name) = abi.decode(data[0], (bool, string));
+        // will not run if the contract is not active or the discord name is not set
+        if (!active || bytes(name).length == 0) {
             return (false, bytes(""));
         }
 
-        return (true, abi.encode(discordName));
+        return (true, abi.encode(name));
     }
 }
