@@ -8,7 +8,7 @@ bun install
 
 ## Notes
 
-- For each workshop, you may need to update the trap path in the `drosera.toml` file to point to current workshop.
+- For each workshop, you may need to update the trap path in the `drosera.toml` file to point to current workshop build files.
 - You will need to add the operator address to the `whitelist` in the `drosera.toml` file to opt in to the trap.
 
 ## Build Commands
