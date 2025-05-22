@@ -30,3 +30,17 @@ After the trap is deployed and shouldRespond is true, we can check if the user h
 ```bash
 cast call 0x4608Afa7f277C8E0BE232232265850d1cDeB600E "isResponder(address)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
 ```
+
+## Operator Commands
+
+```bash
+make register-operator
+```
+
+```bash
+make optin
+```
+
+```bash
+make run-operator
+```
