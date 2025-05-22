@@ -1,5 +1,16 @@
 -include .env
 
+# forge build commands
+
+build-workshop-1:
+	cd workshops/workshop-1 && forge build
+
+build-workshop-2:
+	cd workshops/workshop-2 && forge build
+
+build-workshop-3:
+	cd workshops/workshop-3 && forge build
+
 # Operator commands
 
 # register the operator within the network if not already registered

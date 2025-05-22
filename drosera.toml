@@ -11,6 +11,6 @@ response_function = "respond()" # function to call on the contract
 cooldown_period_blocks = 33 # how long to wait before the trap can be triggered again
 min_number_of_operators = 1 # minimum number of operators required to trigger the trap
 max_number_of_operators = 2 # maximum number of operators that can trigger the trap
-block_sample_size = 10 # how many blocks to sample to determine the price of the trap
+block_sample_size = 1 # how many blocks to sample to determine the price of the trap
 private_trap = true # if true, the trap can only be opted in by the whitelist of operators. Best for testing.
 whitelist = [] # list of operator addresses that can trigger the trap
