@@ -3,6 +3,10 @@
 ## Setup
 
 ```bash
+curl -L https://app.drosera.io/install | bash
+```
+
+```bash
 bun install
 ```
 
