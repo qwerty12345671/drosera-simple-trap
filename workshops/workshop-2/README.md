@@ -2,7 +2,7 @@
 
 In this workshop we will:
 
-- Update our `drosera.toml` file to use the new `someOtherResponseFunction` function and new response contract address.
+- Update our `drosera.toml` file to use the new `someOtherResponseFunction()` function signature and new response contract address.
 
 ## Commands
 
@@ -27,7 +27,7 @@ drosera apply
 After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
 
 ```bash
-cast call 0xf23cf34cEA3cbc1590dDD5E3D2dFE0C552544B98 "isResponder(address)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
+cast call 0xf23cf34cEA3cbc1590dDD5E3D2dFE0C552544B98 "isResponder(address)(bool)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
 ```
 
 ## Operator Commands
