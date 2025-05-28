@@ -2,7 +2,7 @@
 
 In this workshop we will:
 
-- Update our `drosera.toml` file to use the new `respondWithDiscordName` function and new response contract address.
+- Update our `drosera.toml` file to use the new `respondWithDiscordName(string)` function signature and new response contract address.
 - Update our `Trap.sol` file to respond with our discord name.
 
 ## Commands
@@ -28,7 +28,7 @@ drosera apply
 After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
 
 ```bash
-cast call 0x4608Afa7f277C8E0BE232232265850d1cDeB600E "isResponder(address)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
+cast call 0x4608Afa7f277C8E0BE232232265850d1cDeB600E "isResponder(address)(bool)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
 ```
 
 ## Operator Commands
