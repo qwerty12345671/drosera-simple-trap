@@ -28,7 +28,7 @@ drosera apply
 After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
 
 ```bash
-cast call 0x4608Afa7f277C8E0BE232232265850d1cDeB600E "isResponder(address)(bool)" <owner_address> --rpc-url https://ethereum-holesky-rpc.publicnode.com
+cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "isResponder(address)(bool)" <owner_address> --rpc-url https://0xrpc.io/hoodi
 ```
 
 ## Operator Commands

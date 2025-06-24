@@ -43,6 +43,15 @@ contract MockResponse {
         return responders[_user];
     }
 
+    function discordNameAdded(string memory _name) external view returns (bool) {
+        for (uint256 i = 0; i < discordNames.length; i++) {
+            if (keccak256(bytes(discordNames[i])) == keccak256(bytes(_name))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function getDiscordNamesBatch(uint256 _startIndex, uint256 _batchSize) external view returns (string[] memory) {
         require(_startIndex < discordNames.length, "Start index out of bounds");
 

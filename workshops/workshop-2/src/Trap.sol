@@ -8,7 +8,7 @@ interface IMockResponse {
 }
 
 contract Trap is ITrap {
-    address public constant RESPONSE_CONTRACT = 0xf23cf34cEA3cbc1590dDD5E3D2dFE0C552544B98;
+    address public constant RESPONSE_CONTRACT = 0x2eEaEFA08Bd3377d02a9ac75B9efF8Af5766313d;
 
     function collect() external view returns (bytes memory) {
         bool active = IMockResponse(RESPONSE_CONTRACT).isActive();
