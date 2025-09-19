@@ -9,7 +9,7 @@ interface IMockResponse {
 
 contract Trap is ITrap {
     address public constant RESPONSE_CONTRACT = 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608;
-    string constant discordName = "Ms.Octvnaa"; // add your discord name here
+    string constant discordName = "Your_discordname"; // add your discord nickname here i prefer nickname discord thank username
 
     function collect() external view returns (bytes memory) {
         bool active = IMockResponse(RESPONSE_CONTRACT).isActive();
