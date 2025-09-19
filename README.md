@@ -1,6 +1,7 @@
-# Drosera Workshop-3 CLI operation without docker or systemd
+# Drosera Workshop-3 (Deploy Trap Discordname Onchain) 
+CLI operation without docker or systemd
 
-# JUST FOLLOW THE COMMAND AND COPY PASTE THANK YOU
+# JUST FOLLOW THE COMMAND 1-13 AND COPY PASTE THANK YOU
 
 In this workshop we will:
 
