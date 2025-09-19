@@ -14,5 +14,5 @@ min_number_of_operators = 1
 max_number_of_operators = 2 
 block_sample_size = 1 
 private_trap = true 
-whitelist = ["0xed20ed2636a57a126b2038ebb9089191e7697a5e"] 
-address = "0x0C5f884625a0C078B8c3Ca9C8c612f3100679750"
+whitelist = [""] 
+
