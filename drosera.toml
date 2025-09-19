@@ -14,5 +14,5 @@ min_number_of_operators = 1
 max_number_of_operators = 2 
 block_sample_size = 1 
 private_trap = true 
-whitelist = [""] 
+whitelist = [""] # paste your operator address here use EVM wallet Address
 
