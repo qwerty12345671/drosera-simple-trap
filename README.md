@@ -9,6 +9,7 @@ In this workshop we will:
 
 ## Setup
 1. Login to your terminal (windows power shell)
+**Note : Skip this step if using Termius or Mobaxterm**
 ```bash
 ssh root@YOURIPVPS
 ```
@@ -77,6 +78,7 @@ bun install
 nano src/Trap.sol
 ```
 <img width="684" height="110" alt="image" src="https://github.com/user-attachments/assets/7c5254f6-f11b-46ea-adbb-f5d24d46457c" />
+
 and then ctrl x + y enter
 
 8. **Note:** Make sure to build the contracts before running the Drosera commands so the updated bytecode is used.
@@ -84,6 +86,7 @@ and then ctrl x + y enter
 forge build
 ```
 <img width="706" height="231" alt="image" src="https://github.com/user-attachments/assets/39c6b7c0-ebc2-4657-8c93-4e480b7b809b" />
+
 forget about note
 
 9. Setting your drosera.toml
@@ -91,41 +94,73 @@ forget about note
 nano drosera.toml
 ```
 fill 
-whitelist = ["yourevmaddress1"] // 1 operator
-whitelist = ["yourevmaddress1","yourevmaddress2"] // 2 operator
-with your EVM address ( 1 EVM address if 1 operator , 2 EVM address if 2 operator )
-see the picture 
-<img width="517" height="307" alt="image" src="https://github.com/user-attachments/assets/59597481-3e57-4498-ba5c-cbb99e0de3cb" />
-and save ctrl x + y enter
 
-Test the trap before applying it to the network.
+whitelist = ["yourevmaddress1"] // 1 operator ,
+
+whitelist = ["yourevmaddress1","yourevmaddress2"] // 2 operator
+
+with your EVM address ( 1 EVM address if 1 operator , 2 EVM address if 2 operator )
+
+see the picture 
+
+<img width="517" height="307" alt="image" src="https://github.com/user-attachments/assets/59597481-3e57-4498-ba5c-cbb99e0de3cb" />
+
+and save ctrl x + y enter
 
 ```bash
 drosera dryrun
 ```
-
-Apply the trap to the network.
-
 ```bash
-drosera apply
+DROSERA_PRIVATE_KEY=xxxxx drosera apply
 ```
+change xxxxx with **YOUR EVM PRIVATE KEY** and then enter
+you got TRAP_ADDRESS 
 
-After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
-
+10. Setup The Operator 
 ```bash
-cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "isResponder(address)(bool)" <owner_address> --rpc-url https://0xrpc.io/hoodi
+cp example.env .env
 ```
+```bash
+nano .env
+```
+fill your DROSERA_PRIVATE_KEY, VPS_IP, TRAP_ADDRESS
+see the picture for result after change
 
-## Operator Commands
+<img width="698" height="129" alt="image" src="https://github.com/user-attachments/assets/59b47cc7-e3e8-4557-88c1-af4e0ed9c6ef" />
 
+and then ctrl x + y
+
+11. Register Your Operator
 ```bash
 make register-operator
 ```
+notif successfully
 
+12. Opt in your Operator
 ```bash
 make optin
 ```
+notif successfully
 
+13. Running Your Drosera Node CLI
+```bash
+screen -S drosera
+```
 ```bash
 make run-operator
 ```
+Wait The Logs 
+if you want close the screen ctrl a + d
+
+**DONE YOURE SUCCESSFULLY RUNNING DROSERA NODE FOR 1 OPERATOR**
+
+14 .After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
+```bash
+cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "isResponder(address)(bool)" <yourevmaddress> --rpc-url https://ethereum-hoodi-rpc.publicnode.com
+```
+
+15. Check your discordname onchain list
+```bash
+cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "getDiscordNamesBatch(uint256,uint256)(string[])" 0 50000 --rpc-url https://ethereum-hoodi-rpc.publicnode.com | grep -E "yourdiscordname"
+```
+
