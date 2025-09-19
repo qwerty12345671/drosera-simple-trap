@@ -1,17 +1,102 @@
-# Drosera Workshop-3
+# Drosera Workshop-3 CLI operation without docker or systemd
+
+# JUST FOLLOW THE COMMAND AND COPY PASTE THANK YOU
 
 In this workshop we will:
 
-- Update our `drosera.toml` file to use the new `respondWithDiscordName(string)` function signature and new response contract address.
 - Update our `Trap.sol` file to respond with our discord name.
+- Update our `example.env` copy to `.env` to get access your data
 
-## Commands
+## Setup
+1. Login to your terminal (windows power shell)
+```bash
+ssh root@YOURIPVPS
+```
+2. Setup Your VPS Package 
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
+```bash
+sudo apt install curl screen iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev ca-certificates  -y
+```
+Warning this is important you need allow your port first before enable your firewall
+```bash
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw allow 31313/tcp
+sudo ufw allow 31314/tcp
+sudo ufw allow 31315/tcp
+sudo ufw allow 31316/tcp
+```
+Now enable your firewall
+```bash
+sudo ufw enable
+```
+Done 
 
-**Note:** Make sure to build the contracts before running the Drosera commands so the updated bytecode is used.
+3. Install Drosera CLI
+```bash
+curl -L https://app.drosera.io/install | bash
+```
+```bash
+source /root/.bashrc
+```
+```bash
+droseraup
+```
+4. Install Foundry
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+```
+```bash
+source /root/.bashrc
+```
+```bash
+foundryup
+```
+5. Install Bun
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+```bash
+source /root/.bashrc
+```
+6. Clone Our Repository
+```bash
+git clone https://github.com/Warx04/drosera-workshop-3.git
+```
+```bash
+cd drosera-workshop-3
+```
+```bash
+bun install
+```
+7. Edit your Trap.sol fill with your Discord NickName ( Not Username )
+```bash
+nano src/Trap.sol
+```
+<img width="684" height="110" alt="image" src="https://github.com/user-attachments/assets/7c5254f6-f11b-46ea-adbb-f5d24d46457c" />
+and then ctrl x + y enter
 
+8. **Note:** Make sure to build the contracts before running the Drosera commands so the updated bytecode is used.
 ```bash
 forge build
 ```
+<img width="706" height="231" alt="image" src="https://github.com/user-attachments/assets/39c6b7c0-ebc2-4657-8c93-4e480b7b809b" />
+forget about note
+
+9. Setting your drosera.toml
+```bash
+nano drosera.toml
+```
+fill 
+whitelist = ["yourevmaddress1"] // 1 operator
+whitelist = ["yourevmaddress1","yourevmaddress2"] // 2 operator
+with your EVM address ( 1 EVM address if 1 operator , 2 EVM address if 2 operator )
+see the picture 
+<img width="517" height="307" alt="image" src="https://github.com/user-attachments/assets/59597481-3e57-4498-ba5c-cbb99e0de3cb" />
+and save ctrl x + y enter
 
 Test the trap before applying it to the network.
 
