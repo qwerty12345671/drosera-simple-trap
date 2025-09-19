@@ -4,29 +4,22 @@
     "": {
       "name": "drosera-workshop",
     },
-    "workshops/intro": {
-      "name": "intro",
-      "dependencies": {
-        "contracts": "https://github.com/drosera-network/contracts",
-        "forge-std": "github:foundry-rs/forge-std#v1.9.7",
-      },
-    },
     "workshops/workshop-1": {
-      "name": "workshop-1",
+      "name": "drosera-workshop-1",
       "dependencies": {
         "contracts": "https://github.com/drosera-network/contracts",
         "forge-std": "github:foundry-rs/forge-std#v1.9.7",
       },
     },
     "workshops/workshop-2": {
-      "name": "workshop-2",
+      "name": "drosera-workshop-2",
       "dependencies": {
         "contracts": "https://github.com/drosera-network/contracts",
         "forge-std": "github:foundry-rs/forge-std#v1.9.7",
       },
     },
     "workshops/workshop-3": {
-      "name": "workshop-3",
+      "name": "drosera-workshop-3",
       "dependencies": {
         "contracts": "https://github.com/drosera-network/contracts",
         "forge-std": "github:foundry-rs/forge-std#v1.9.7",
@@ -34,16 +27,14 @@
     },
   },
   "packages": {
-    "contracts": ["contracts@github:drosera-network/contracts#3a89d13", {}, "drosera-network-contracts-3a89d13"],
+    "contracts": ["@drosera/contracts@github:drosera-network/contracts#1620415", {}, "drosera-network-contracts-1620415"],
+
+    "drosera-workshop-1": ["drosera-workshop-1@workspace:workshops/workshop-1"],
+
+    "drosera-workshop-2": ["drosera-workshop-2@workspace:workshops/workshop-2"],
+
+    "drosera-workshop-3": ["drosera-workshop-3@workspace:workshops/workshop-3"],
 
     "forge-std": ["forge-std@github:foundry-rs/forge-std#77041d2", {}, "foundry-rs-forge-std-77041d2"],
-
-    "intro": ["intro@workspace:workshops/intro"],
-
-    "workshop-1": ["workshop-1@workspace:workshops/workshop-1"],
-
-    "workshop-2": ["workshop-2@workspace:workshops/workshop-2"],
-
-    "workshop-3": ["workshop-3@workspace:workshops/workshop-3"],
   }
 }

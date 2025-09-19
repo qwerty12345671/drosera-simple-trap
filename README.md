@@ -1,34 +1,34 @@
-# Drosera Workshops
+# Drosera Workshop-3
 
-## Setup
+In this workshop we will:
+
+- Update our `drosera.toml` file to use the new `respondWithDiscordName(string)` function signature and new response contract address.
+- Update our `Trap.sol` file to respond with our discord name.
+
+## Commands
+
+**Note:** Make sure to build the contracts before running the Drosera commands so the updated bytecode is used.
 
 ```bash
-curl -L https://app.drosera.io/install | bash
+forge build
 ```
 
+Test the trap before applying it to the network.
+
 ```bash
-bun install
+drosera dryrun
 ```
 
-## Notes
-
-- For each workshop, you may need to update the trap path in the `drosera.toml` file to point to current workshop build files.
-- You will need to add the operator address to the `whitelist` in the `drosera.toml` file to opt in to the trap.
-
-## Build Commands
-
-After making changes to the contracts, you will need to build the contracts before running the Drosera commands so the updated bytecode is used.
+Apply the trap to the network.
 
 ```bash
-make build-workshop-1
+drosera apply
 ```
 
-```bash
-make build-workshop-2
-```
+After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
 
 ```bash
-make build-workshop-3
+cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "isResponder(address)(bool)" <owner_address> --rpc-url https://0xrpc.io/hoodi
 ```
 
 ## Operator Commands

@@ -1,16 +1,18 @@
-ethereum_rpc = "https://0xrpc.io/hoodi"
+ethereum_rpc = "https://ethereum-hoodi-rpc.publicnode.com"
 drosera_rpc = "https://relay.hoodi.drosera.io"
+eth_chain_id = 560048
 drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
 
 [traps]
 
-[traps.mytrap]
-path = "workshops/workshop-1/out/Trap.sol/Trap.json"
-response_contract = "0x62dD18Ee3e0bDAB538d4DA6F79aAde7269d3E97f" # address of the contract that will be called
-response_function = "respond()" # function to call on the contract
-cooldown_period_blocks = 33 # how long to wait before the trap can be triggered again
-min_number_of_operators = 1 # minimum number of operators required to trigger the trap
-max_number_of_operators = 2 # maximum number of operators that can trigger the trap
-block_sample_size = 1 # how many blocks to sample to determine the price of the trap
-private_trap = true # if true, the trap can only be opted in by the whitelist of operators. Best for testing.
-whitelist = [] # list of operator addresses that can trigger the trap
+[traps.discordtrap]
+path = "out/Trap.sol/Trap.json"
+response_contract = "0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608"
+response_function = "respondWithDiscordName(string)"
+cooldown_period_blocks = 32 
+min_number_of_operators = 1 
+max_number_of_operators = 2 
+block_sample_size = 1 
+private_trap = true 
+whitelist = ["0xed20ed2636a57a126b2038ebb9089191e7697a5e"] 
+address = "0x0C5f884625a0C078B8c3Ca9C8c612f3100679750"

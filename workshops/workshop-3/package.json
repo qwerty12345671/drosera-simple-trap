@@ -1,7 +1,0 @@
-{
-  "name": "drosera-workshop-3",
-  "dependencies": {
-    "forge-std": "github:foundry-rs/forge-std#v1.9.7",
-    "contracts": "https://github.com/drosera-network/contracts"
-  }
-}
