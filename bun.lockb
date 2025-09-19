@@ -1,0 +1,24 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "drosera-workshop-3",
+      "dependencies": {
+        "contracts": "https://github.com/drosera-network/contracts",
+        "forge-std": "github:foundry-rs/forge-std#v1.9.7"
+      }
+    }
+  },
+  "packages": {
+    "contracts": [
+      "contracts@github:drosera-network/contracts#3a89d13",
+      {},
+      "drosera-network-contracts-3a89d13"
+    ],
+    "forge-std": [
+      "forge-std@github:foundry-rs/forge-std#77041d2",
+      {},
+      "foundry-rs-forge-std-77041d2"
+    ]
+  }
+}
