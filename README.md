@@ -9,7 +9,7 @@ CLI operation without docker or systemd
 - Ethereum Hoodi Faucet min 0.2 ETH in your wallets
 - Ethereum Hoodi RPC
 
-# JUST FOLLOW THE COMMAND 1-13 AND COPY PASTE THANK YOU
+# JUST FOLLOW THE COMMAND 1-14 AND COPY PASTE THANK YOU
 
 In this workshop we will:
 
