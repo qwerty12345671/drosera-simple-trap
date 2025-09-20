@@ -9,6 +9,12 @@ register-operator:
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
 	--drosera-address ${DROSERA_ADDRESS}
 
+register-operator2:
+	drosera-operator register \
+	--eth-rpc-url ${RPC_URL} \
+	--eth-private-key ${DROSERA_PRIVATE_KEY2} \
+	--drosera-address ${DROSERA_ADDRESS}
+
 
 run-operator:
 	drosera-operator node \
@@ -58,4 +64,11 @@ optout:
 	--eth-private-key ${DROSERA_PRIVATE_KEY} \
 	--drosera-address ${DROSERA_ADDRESS} \
 	--trap-config-address ${TRAP_ADDRESS}
+
+optout2:
+	drosera-operator optout \
+	--eth-rpc-url ${RPC_URL} \
+	--eth-private-key ${DROSERA_PRIVATE_KEY2} \
+	--drosera-address ${DROSERA_ADDRESS} \
+	--trap-config-address ${TRAP_ADDRESS2}
 
