@@ -1,6 +1,14 @@
 # Drosera Workshop-3 (Deploy Trap Discordname Onchain) 
 CLI operation without docker or systemd
 
+# Minimum System Requirement 
+- 2 CPU Cores
+- 4 GB RAM
+- 20 GB Disk Space
+- Bandwitch 100mbps
+- Ethereum Hoodi Faucet min 0.2 ETH in your wallets
+- Ethereum Hoodi RPC
+
 # JUST FOLLOW THE COMMAND 1-13 AND COPY PASTE THANK YOU
 
 In this workshop we will:
@@ -12,8 +20,10 @@ In this workshop we will:
 1. Login to your terminal (windows power shell)
 **Note : Skip this step if using Termius or Mobaxterm**
 ```bash
-ssh root@YOURIPVPS
+ssh username@YOURIPVPS
 ```
+Example : ( ssh root@132.444.23.12 )
+
 2. Setup Your VPS Package 
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
@@ -143,7 +153,12 @@ make optin
 ```
 notif successfully
 
-13. Running Your Drosera Node CLI
+13. Bloombost Your Trap
+```bash
+make bloombost
+```
+
+14. Running Your Drosera Node CLI
 ```bash
 screen -S drosera
 ```
@@ -155,13 +170,33 @@ if you want close the screen ctrl a + d
 
 **DONE YOURE SUCCESSFULLY RUNNING DROSERA NODE FOR 1 OPERATOR**
 
-14 .After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
+15 .After the trap is deployed and shouldRespond is true, we can check if the user has responded by calling the isResponder function on the response contract and pass in the trapConfig owners address.
 ```bash
 cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "isResponder(address)(bool)" <yourevmaddress> --rpc-url https://ethereum-hoodi-rpc.publicnode.com
 ```
 
-15. Check your discordname onchain list
+16. Check your discordname onchain list
 ```bash
 cast call 0x25E2CeF36020A736CF8a4D2cAdD2EBE3940F4608 "getDiscordNamesBatch(uint256,uint256)(string[])" 0 50000 --rpc-url https://ethereum-hoodi-rpc.publicnode.com | grep -E "yourdiscordname"
+```
+# Additional Command
+a. Check your logs with screen 
+```bash
+screen -r drosera
+```
+
+b. Kill your screen 
+```bash
+screen -S drosera -X kill
+```
+
+c. Register 2nd Operator
+```bash
+make register-operator2
+```
+
+d. Optin 2nd Operator
+```bash
+make optin2
 ```
 
