@@ -29,17 +29,17 @@ run-operator:
 	--disable-dnr-confirmation true
 
 run-operator2:
-    drosera-operator node \
-    --network-p2p-port 31315 \
-    --server-port 31316 \
-    --eth-rpc-url ${RPC_URL} \
-    --eth-private-key ${DROSERA_PRIVATE_KEY2} \
-    --network-external-p2p-address ${VPS_IP} \
-    --drosera-address ${DROSERA_ADDRESS} \
-    --log-level info \
-    --listen-address 0.0.0.0 \
-    --db-file-path ./data/operator.db \
-    --disable-dnr-confirmation true
+	drosera-operator node \
+	--network-p2p-port 31315 \
+	--server-port 31316 \
+	--eth-rpc-url ${RPC_URL} \
+	--eth-private-key ${DROSERA_PRIVATE_KEY2} \
+	--network-external-p2p-address ${VPS_IP} \
+	--drosera-address ${DROSERA_ADDRESS} \
+	--log-level info \
+	--listen-address 0.0.0.0 \
+	--db-file-path ./data/operator.db \
+	--disable-dnr-confirmation true
 
 # replace the trap config address with the one you want to optin to
 optin:
@@ -50,11 +50,11 @@ optin:
 	--trap-config-address ${TRAP_ADDRESS}
 
 optin2:
-    drosera-operator optin \
-    --eth-rpc-url ${RPC_URL} \
-    --eth-private-key ${DROSERA_PRIVATE_KEY2} \
-    --drosera-address ${DROSERA_ADDRESS} \
-    --trap-config-address ${TRAP_ADDRESS}
+	drosera-operator optin \
+	--eth-rpc-url ${RPC_URL} \
+	--eth-private-key ${DROSERA_PRIVATE_KEY2} \
+	--drosera-address ${DROSERA_ADDRESS} \
+	--trap-config-address ${TRAP_ADDRESS}
 
 # replace the trap config address with the one you want to optout from
 optout:
@@ -74,6 +74,7 @@ optout2:
 # bloombost your trap via cli
 bloombost:
 	drosera bloomboost \
+	--private-key ${DROSERA_PRIVATE_KEY} \
 	--trap-address ${TRAP_ADDRESS} \
 	--eth-amount 0.1
 
