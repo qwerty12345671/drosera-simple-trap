@@ -72,3 +72,9 @@ optout2:
 	--drosera-address ${DROSERA_ADDRESS} \
 	--trap-config-address ${TRAP_ADDRESS2}
 
+# bloombost your trap via cli
+bloombost:
+	drosera bloomboost \
+	--trap-address ${TRAP_ADDRESS} \
+	--eth-amount 0.1
+
