@@ -189,6 +189,9 @@ b. Kill your screen
 ```bash
 screen -S drosera -X kill
 ```
+```bash
+screen -S drosera2 -X kill
+```
 
 c. Register 2nd Operator
 ```bash
@@ -199,4 +202,12 @@ d. Optin 2nd Operator
 ```bash
 make optin2
 ```
+e. Run 2nd Operator
+```bash
+screen -S drosera2
+```
+```bash
+make run-operator2
+```
+and then ctrl a + d to exit screen.
 
